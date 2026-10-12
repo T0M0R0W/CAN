@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             container.innerHTML = "<p>Chargement des données...</p>";
             
             // 1. Récupérer la liste des liaisons
-            const responseLiaisons = await fetch("https://can.iutrs.unistra.fr/api/liaison/all");
+            const responseLiaisons = await fetch("https://tomorow.eu.pythonanywhere.com/CAN/api/liaison/all");
             if (!responseLiaisons.ok) throw new Error("Impossible de récupérer les liaisons");
             const liaisons = await responseLiaisons.json();
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Pour chaque liaison, récupérer le CA
             // On utilise une boucle for...of pour gérer l'async/await proprement
             for (const liaison of liaisons) {
-                const respCA = await fetch(`https://can.iutrs.unistra.fr/api/liaison/${liaison.id}/chiffreAffaire`);
+                const respCA = await fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/liaison/${liaison.id}/chiffreAffaire`);
                 const stats = await respCA.json();
 
                 // Créer la carte HTML

@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
             cartesGenerees = []; // Reset
 
             //infos Réservations
-            const resp = await fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}`);
+            const resp = await fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}`);
             if (!resp.ok) throw new Error("Réservation introuvable");
             const resa = await resp.json();
 
             //généré les cartes Passagers
             for (let i = 1; i <= resa.nbPassagers; i++) {
-                const pResp = await fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}/passager/${i}`);
+                const pResp = await fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}/passager/${i}`);
                 const p = await pResp.json();
                 ajouterCarteMemoire(resa, p, "Passager");
             }
 
             //générer les cartes Véhicules
             for (let i = 1; i <= resa.nbVehicules; i++) {
-                const vResp = await fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}/vehicule/${i}`);
+                const vResp = await fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}/vehicule/${i}`);
                 const v = await vResp.json();
                 ajouterCarteMemoire(resa, v, "Véhicule");
             }

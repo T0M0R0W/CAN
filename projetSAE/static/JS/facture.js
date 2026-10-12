@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function chargerFacture(id) {
         try {
-            const responseResa = await fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}`);
+            const responseResa = await fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}`);
             if (!responseResa.ok) throw new Error("Réservation introuvable");
             const resa = await responseResa.json();
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const promessesPassagers = [];
             for (let i = 1; i <= resa.nbPassagers; i++) {
-                promessesPassagers.push(fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}/passager/${i}`).then(r => r.json()));
+                promessesPassagers.push(fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}/passager/${i}`).then(r => r.json()));
             }
             const passagers = await Promise.all(promessesPassagers);
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const promessesVehicules = [];
             for (let i = 1; i <= resa.nbVehicules; i++) {
-                promessesVehicules.push(fetch(`https://can.iutrs.unistra.fr/api/reservation/${id}/vehicule/${i}`).then(r => r.json()));
+                promessesVehicules.push(fetch(`https://tomorow.eu.pythonanywhere.com/CAN/api/reservation/${id}/vehicule/${i}`).then(r => r.json()));
             }
             const vehicules = await Promise.all(promessesVehicules);
 

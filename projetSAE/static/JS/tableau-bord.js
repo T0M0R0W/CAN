@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // Appel API
-            const url = `https://can.iutrs.unistra.fr/api/liaison/${idLiaison}/remplissage/${date}`;
+            const url = `https://tomorow.eu.pythonanywhere.com/CAN/api/liaison/${idLiaison}/remplissage/${date}`;
             const response = await fetch(url);
             
             if (!response.ok) throw new Error("Erreur de récupération");
