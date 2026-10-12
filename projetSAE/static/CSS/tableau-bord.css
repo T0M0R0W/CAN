@@ -1,0 +1,100 @@
+.controles-tableau {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.groupe-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.placeholder-text{
+    text-align: center;
+}
+
+/* Carte pour une traversée (ex: 09:45) */
+.carte-traversee {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heure-traversee {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #005b82;
+    min-width: 100px;
+}
+
+/* Les jauges */
+.conteneur-jauges {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ligne-jauge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.label-jauge {
+    width: 100px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.barre-fond {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.barre-remplissage {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.pourcentage-texte {
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* --- CODES COULEURS DU SUJET --- */
+
+/* Vert jusqu'à 50% */
+.bg-vert { background-color: #27ae60; }
+
+/* Orange entre 50% et 75% */
+.bg-orange { background-color: #e67e22; }
+
+/* Rouge de 75% à 100% */
+.bg-rouge { background-color: #c0392b; }
+
+/* Jaune fluo au delà de 100% (Surbooking) */
+.bg-fluo { 
+    background-color: #ccff00; 
+    box-shadow: 0 0 5px #ccff00;
+    color: black; /* Texte noir pour contraste sur jaune fluo */
+}

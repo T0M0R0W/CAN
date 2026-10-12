@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link rel="stylesheet" href="../static/CSS/carte.css">
+    <link rel="icon" href="../static/logoNoText.png" type="image/png">
+    <title>Statistiques</title>
+</head>
+<body>
+    <header class="main-header">
+        <a href="./index.html" class="logo-container" id="fig">
+            <img src="../static/Can_cut.png" class="nav-logo" id="logo" alt="Logo CAN">
+        </a>
+        
+        <nav class="main-nav">
+            <a href="./tableau-bord.html">Tableau de Bord</a>
+            <a href="./carte.html">Cartes</a> 
+            <a href="./facture.html">Facture</a>
+            <a href="./statistique.html">Statistiques</a>
+        </nav>
+    </header>
+    
+    <h1>Vos Cartes d'Embarquement</h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <label for="search-resa">Numéro de réservation : </label>
+        <input type="text" id="search-resa" placeholder="Ex: 1">
+        <button id="btn-load-cards">Charger</button>
+    </div>
+
+    <main id="container-cartes" class="container-cartes">
+        <p style="text-align:center;">Veuillez saisir un numéro de réservation pour voir les cartes.</p>
+    </main>
+
+    <template id="template-carte">
+        <div class="carte-modele">
+            
+            <div class="col-gauche">
+                <div class="bloc-logo">
+                    <img src="../static/logoCAN.png" alt="Logo CAN" class="img-logo">
+                    <div class="texte-logo">
+                        Compagnie<br>Alsacienne de<br>Navigation
+                    </div>
+                </div>
+
+                <div class="infos-trajet">
+                    <div class="ligne-trajet">
+                        <span class="label-bleu">Port de départ</span>
+                        <div class="valeur-pilule card-depart"></div>
+                    </div>
+                    <div class="ligne-trajet">
+                        <span class="label-bleu">Port d'arrivée</span>
+                        <div class="valeur-pilule card-arrivee"></div>
+                    </div>
+                    <div class="ligne-trajet">
+                        <span class="label-bleu">Date</span>
+                        <div class="valeur-pilule card-date"></div>
+                    </div>
+                    <div class="ligne-trajet">
+                        <span class="label-bleu">Heure départ</span>
+                        <div class="valeur-pilule card-heure"></div>
+                    </div>
+                    <div class="ligne-trajet">
+                        <span class="label-bleu">Bateau</span>
+                        <div class="valeur-pilule card-bateau"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-droite">
+                <h2 class="titre-carte">Carte d'embarquement</h2>
+
+                <div class="bloc-details-blanc">
+                    <div class="header-details">
+                        <div class="ligne-detail-top">
+                            <span class="label-gras">Réservation</span>
+                            <span class="valeur-gras card-ref"></span>
+                        </div>
+                        <div class="ligne-detail-top">
+                            <span class="label-gras">Nom</span>
+                            <span class="valeur-gras card-client"></span>
+                        </div>
+                    </div>
+
+                    <hr class="separateur-noir">
+
+                    <div class="infos-passager">
+                        
+                        <div class="wrapper-details-texte">
+                            <div class="titre-section-passager card-type-label">Passager</div>
+                            
+                            <div class="grille-infos">
+                                <div class="row-info">
+                                    <span class="label-gras card-nom-label">Nom</span>
+                                    <span class="valeur-simple card-nom-objet"></span>
+                                </div>
+                                <div class="row-info">
+                                    <span class="label-gras">Prénom</span>
+                                    <span class="valeur-simple card-prenom-seul"></span> 
+                                </div>
+                                <div class="row-info">
+                                    <span class="label-gras">Type</span>
+                                    <span class="valeur-simple card-categorie"></span>
+                                </div>
+                                <div class="row-info">
+                                    <span class="label-gras">Nombre</span>
+                                    <span class="valeur-simple card-quantity"></span>
+                                </div>
+                                <div class="row-info margin-top-10">
+                                    <span class="label-gras">Prix</span>
+                                    <span class="valeur-simple"><span class="card-prix"></span> €</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrapper-qr">
+                            <img src="" alt="QR" class="img-qr-code card-qrcode-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="../static/JS/carte.js"></script> </body>
+</html>

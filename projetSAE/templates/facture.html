@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link rel="stylesheet" href="../static/CSS/facture.css">
+    <link rel="icon" href="../static/logoNoText.png" type="image/png">
+    <title>Statistiques</title>
+</head>
+<body>
+    <header class="main-header">
+        <a href="./index.html" class="logo-container" id="fig">
+            <img src="../static/Can_cut.png" class="nav-logo" id="logo" alt="Logo CAN">
+        </a>
+        
+        <nav class="main-nav">
+            <a href="./tableau-bord.html">Tableau de Bord</a>
+            <a href="./carte.html">Cartes</a> 
+            <a href="./facture.html">Facture</a>
+            <a href="./statistique.html">Statistiques</a>
+        </nav>
+    </header>
+    
+    <h1>Facture</h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <label for="facture-id-input">Numéro de réservation : </label>
+        <input type="text" id="facture-id-input" placeholder="Ex: 1">
+        <button id="btn-load-facture">Afficher la facture</button>
+    </div>
+
+    <main class="container-facture" id="facture-content" style="display:none;"> 
+        <div class="facture-header">
+            <div class="infos-generales">
+                <p><strong>Date d'édition :</strong> <span id="date-edition">--/--/----</span></p>
+                <p><strong>Réservation n° :</strong> <span id="res-id">--</span></p>
+                <p><strong>Nom :</strong> <span id="res-nom">--</span></p>
+            </div>
+            <div class="infos-traversee">
+                <p><strong>Traversée :</strong> <span id="res-depart">--</span> - <span id="res-arrivee">--</span></p>
+                <p><strong>Date départ :</strong> <span id="res-date">--</span> à <span id="res-heure">--</span></p>
+                <p><strong>Bateau :</strong> <span id="res-bateau">--</span></p>
+            </div>
+        </div>
+
+        <h3>Les personnes</h3>
+        <table class="table-facture">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Nombre</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix ligne</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-passagers">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align:right;"><strong>Sous-total personnes :</strong></td>
+                    <td id="total-passagers">-- €</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Les véhicules</h3>
+        <table class="table-facture">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix ligne</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-vehicules">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align:right;"><strong>Sous-total véhicules :</strong></td>
+                    <td id="total-vehicules">-- €</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="total-final">
+            <h3>Prix total : <span id="grand-total">--</span> €</h3>
+        </div>
+    </main>
+
+    <script src="../static/JS/facture.js"></script>
+</body>
+</html>

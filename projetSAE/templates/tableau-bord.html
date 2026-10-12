@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <link rel="stylesheet" href="../static/CSS/tableau-bord.css">
+    <link rel="icon" href="../static/logoNoText.png" type="image/png">
+    <title>Statistiques</title>
+</head>
+<body>
+    <header class="main-header">
+        <a href="./index.html" class="logo-container" id="fig">
+            <img src="../static/Can_cut.png" class="nav-logo" id="logo" alt="Logo CAN">
+        </a>
+        
+        <nav class="main-nav">
+            <a href="./tableau-bord.html">Tableau de Bord</a>
+            <a href="./carte.html">Cartes</a> 
+            <a href="./facture.html">Facture</a>
+            <a href="./statistique.html">Statistiques</a>
+        </nav>
+    </header>
+    
+    <h1>Tableau de Bord : Taux de Remplissage</h1>
+
+    <div class="controles-tableau">
+        <div class="groupe-input">
+            <label>Liaison :</label>
+            <select id="select-liaison">
+                <option value="1">Lorient - Groix</option>
+                <option value="2">Groix - Lorient</option>
+                <option value="3">Quiberon - Belle-Île</option>
+                <option value="4">Belle-Île - Quiberon</option>
+            </select>
+        </div>
+        <div class="groupe-input">
+            <label>Date :</label>
+            <input type="date" id="input-date" value="2025-11-01">
+        </div>
+        <button id="btn-voir">Voir les traversées</button>
+    </div>
+
+    <main id="resultats-remplissage" class="conteneur-resultats">
+        <p class="placeholder-text">Sélectionnez une liaison et une date pour voir les taux.</p>
+    </main>
+
+    <script src="../static/JS/tableau-bord.js"></script>
+</body>
+</html>

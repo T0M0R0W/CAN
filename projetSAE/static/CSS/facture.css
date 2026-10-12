@@ -1,0 +1,76 @@
+.container-facture {
+    background-color: white;
+    width: 21cm;
+    margin: 30px auto;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif; 
+}
+
+/* En-tête */
+.facture-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+}
+
+.infos-generales, .infos-traversee {
+    line-height: 1.6;
+}
+
+/* Tableaux */
+.table-facture {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table-facture thead {
+    background-color: #eee;
+}
+
+.table-facture th, .table-facture td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.table-facture th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* Totaux */
+tfoot td {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.total-final {
+    text-align: right;
+    margin-top: 20px;
+    border-top: 3px solid black;
+    padding-top: 10px;
+}
+
+.total-final h3 {
+    font-size: 1.5rem;
+    color: #005b82;
+}
+
+/* Responsive design */
+@media screen and (max-width: 21cm){
+    .container-facture{
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+}
